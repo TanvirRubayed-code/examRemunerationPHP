@@ -1,5 +1,7 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+
 $dbServername = "localhost";
 $dbUserName = "root";
 $dbPassword = "";
@@ -35,6 +37,6 @@ $conn = mysqli_connect($dbServername,$dbUserName,$dbPassword, $dbName );
 // $con = connect();
 
 
-?> -->
+?>
 
 
