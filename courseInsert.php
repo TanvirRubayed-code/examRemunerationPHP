@@ -17,9 +17,11 @@ if(isset($postdata) && !empty($postdata))
     $cName = $request->course_name;
     $cCredit = $request->course_credit;
     $cSemester = $request->course_semester;
+    $cHour = $request->course_hour;
+    $cType = $request->course_type;
 
-    $sql = "INSERT INTO course (courseId,courseName,courseCredit,courseSemester)
-     VALUES ('$cId','$cName',$cCredit,'$cSemester');";
+    $sql = "INSERT INTO course (courseId,courseName,courseCredit,courseSemester,courseHour,courseType)
+     VALUES ('$cId','$cName',$cCredit,'$cSemester',$cHour,'$cType');";
 
     if(mysqli_query($conn,$sql)){
         http_response_code(201);
