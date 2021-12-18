@@ -16,7 +16,7 @@ $jsonData = json_decode($loginInfo);
 $adminName = $jsonData->admin_name;
 $adminPassword = $jsonData->admin_password;
 
-// // print_r($adminName);
+// print_r($adminName);
 
 // print_r($adminPassword);
 
@@ -37,6 +37,7 @@ if ($result->num_rows == 1) {
         $hash_pass = $row['admin_password'];
         $i++;
     }
+
     if(password_verify($adminPassword,$hash_pass)){
         echo json_encode($userInfo);
     }
