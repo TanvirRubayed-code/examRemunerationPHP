@@ -17,6 +17,8 @@ if(isset($teacherInfo) && !empty($teacherInfo))
     $teacherE_name = $request->teacherE_name;
     $department = $request->department;
     $title = $request->title;
+    $university = $request->university;
+    $mobile_no = $request->mobile_no;
     $email = $request->email;
     $password = $request->password;
 
@@ -25,8 +27,8 @@ if(isset($teacherInfo) && !empty($teacherInfo))
 
     print_r($request);
 
-    $sql = "INSERT INTO teacher_info (tid,teacherB_name,teacherE_name,department,title,email,password)
-     VALUES ('$tID','$teacherB_name','$teacherE_name','$department','$title','$email','$hash_password');";
+    $sql = "INSERT INTO teacher_info (tid,teacherB_name,teacherE_name,department,title,universityName, 	mobileNo, email,password)
+     VALUES ('$tID','$teacherB_name','$teacherE_name','$department','$title','$university','$mobile_no','$email','$hash_password');";
 
     if(mysqli_query($conn,$sql)){
         http_response_code(201);
